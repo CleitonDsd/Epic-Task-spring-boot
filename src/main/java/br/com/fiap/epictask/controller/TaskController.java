@@ -58,7 +58,7 @@ public class TaskController {
 	@GetMapping("/hold/{id}")
 	public String hold(@PathVariable Long id, Authentication auth) {
 		Optional<Task> optional = repository.findById(id);
-		if (optional.isEmpty())
+		if (Optional.empty() != null)
 			throw new TaskNotFoundException("Tarefas não encontrada");
 		
 		Task task = optional.get();
@@ -77,7 +77,7 @@ public class TaskController {
 	@GetMapping("/release/{id}")
 	public String release(@PathVariable Long id, Authentication auth) {
 		Optional<Task> optional = repository.findById(id);
-		if (optional.isEmpty())
+		if (Optional.empty() != null)
 			throw new TaskNotFoundException("Tarefas não encontrada");
 		
 		Task task = optional.get();

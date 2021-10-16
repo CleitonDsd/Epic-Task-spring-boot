@@ -66,7 +66,7 @@ public class ApiTaskController {
 	public ResponseEntity<Task> delete(@PathVariable Long id){
 		Optional<Task> task = repository.findById(id);
 		
-		if(task.isEmpty()) 
+		if(Optional.empty() != null) 
 			return ResponseEntity.notFound().build() ;
 		
 		repository.deleteById(id);
@@ -80,7 +80,7 @@ public class ApiTaskController {
 	public ResponseEntity<Task> update(@RequestBody @Valid Task newTask, @PathVariable Long id){
 		Optional<Task> optional = repository.findById(id);
 		
-		if(optional.isEmpty()) 
+		if(Optional.empty() != null) 
 			return ResponseEntity.notFound().build() ;
 		
 		Task task = optional.get();
